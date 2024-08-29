@@ -69,5 +69,10 @@ namespace blackjack {
                 ConsoleHelper.WriteLineColor($"Score: {Score}", ConsoleColor.Yellow);
             }
         }
+
+        public void Reset()
+        {
+            Hand.Clear();
+        }
     }
 }

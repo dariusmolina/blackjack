@@ -15,11 +15,19 @@ namespace blackjack {
         }
 
         public void Start() {
+            ResetGame();
             deck.Shuffle();
             InitialDeal();
             PlayerTurn();
             DealerTurn();
             DetermineWinner();
+        }
+
+        private void ResetGame()
+        {
+            player.Reset();
+            dealer.Reset();
+            deck = new Deck(); // Create a new deck for each game
         }
 
         private void DisplayHands(bool hideFirstDealerCard = false)
@@ -136,6 +144,7 @@ namespace blackjack {
 
             if (input == null) {
                 Console.WriteLine("Invalid input. Please try again.");
+                PromptToRestartOrQuit(); // Recursively call the method if input is invalid
                 return;
             }
 
@@ -143,11 +152,15 @@ namespace blackjack {
 
             if (choice == "P") {
                 Console.Clear();
-                Start();
+                Start(); // This will now reset the game properly
             }
             else if (choice == "Q") {
                 Console.WriteLine("Thanks for playing!");
                 Environment.Exit(0);
+            }
+            else {
+                Console.WriteLine("Invalid input. Please try again.");
+                PromptToRestartOrQuit(); // Recursively call the method if input is invalid
             }
         }
     }

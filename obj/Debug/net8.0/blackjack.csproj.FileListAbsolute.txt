@@ -12,3 +12,4 @@
 /Users/darius/Desktop/projects/blackjack/obj/Debug/net8.0/blackjack.pdb
 /Users/darius/Desktop/projects/blackjack/obj/Debug/net8.0/blackjack.genruntimeconfig.cache
 /Users/darius/Desktop/projects/blackjack/obj/Debug/net8.0/ref/blackjack.dll
+/Users/darius/Desktop/projects/blackjack/obj/Debug/net8.0/blackjack.sourcelink.json
